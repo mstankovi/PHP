@@ -12,6 +12,18 @@ function jeProst($broj) {
 
     return true;
 }
+
+$poruka = "";
+
+if (isset($_POST["broj"])) {
+    $broj = $_POST["broj"];
+
+    if (jeProst($broj)) {
+        $poruka = "Broj $broj je prost broj.";
+    } else {
+        $poruka = "Broj $broj nije prost broj.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +34,18 @@ function jeProst($broj) {
 </head>
 <body>
 
-    <h2>Prosti brojevi manji od 100</h2>
+    <h2>Provjera prostog broja</h2>
+
+    <form method="POST">
+        <label>Upiši broj:</label>
+        <input type="number" name="broj" required>
+
+        <button type="submit">Provjeri</button>
+    </form>
+
+    <p><?php echo $poruka; ?></p>
+
+    <h3>Prosti brojevi manji od 100:</h3>
 
     <p>
         <?php
