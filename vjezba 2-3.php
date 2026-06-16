@@ -16,9 +16,9 @@ if ($slika != "php" && $slika != "server" && $slika != "code") {
 }
 
 $slike = [
-    "php" => "img/php.png",
-    "server" => "img/server.png",
-    "code" => "img/code.png"
+    "php" => "php.png",
+    "server" => "server.png",
+    "code" => "code.png"
 ];
 
 $odabranaSlika = $slike[$slika];
